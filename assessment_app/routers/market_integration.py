@@ -1,0 +1,1 @@
+# For this i created a separate script to seed data
