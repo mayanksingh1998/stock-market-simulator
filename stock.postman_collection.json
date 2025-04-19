@@ -1,0 +1,544 @@
+{
+	"info": {
+		"_postman_id": "b0b38054-4667-45cd-a181-cfe20223eee3",
+		"name": "stock",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7938627"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"user@exampl23e.com\",\n    \"password\": \"supersecurepassword\",\n    \"username\": \"JohnDoe22\",\n    \"name\":\"mayank singh\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "user@exampl23e.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "supersecurepassword",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"login"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/login \\\n  -H \"Content-Type: application/x-www-form-urlencoded\" \\\n  -d \"username=user@example.com&password=yourpassword\"\n"
+			},
+			"response": []
+		},
+		{
+			"name": "get user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGV4YW1wbDIzZS5jb20iLCJleHAiOjE3NDUwNjg2NTd9.kdCZT_4f5NZeoZr4T9B48FjZMB5P402GzTWqFPeu-2U"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://localhost:8000/user \\\n  -H \"Authorization: Bearer <your-jwt-token-here>\"\n"
+			},
+			"response": []
+		},
+		{
+			"name": "get user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGV4YW1wbDIzZS5jb20iLCJleHAiOjE3NDUwMTI0ODd9.lJBOrUfPUS4Y4HtULY7-4UmzXYAQeulJPmYuPMZqHcs"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get stocks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGV4YW1wbDIzZS5jb20iLCJleHAiOjE3NDUwNjg2NTd9.kdCZT_4f5NZeoZr4T9B48FjZMB5P402GzTWqFPeu-2U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/stocks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"stocks"
+					]
+				},
+				"description": "Generated from cURL: curl http://localhost:8000/stocks\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Add stocks",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGV4YW1wbDIzZS5jb20iLCJleHAiOjE3NDUwNjMwOTZ9.CZU0QaqfSJXV7ldqhIFxzgcOA42vIpIe6n6-I-FyCJc"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"symbol\": \"RELIANCE\",\n        \"name\": \"RELIANCE bank \"\n      }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/stocks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"stocks"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/stocks \\\n  -H \"Authorization: Bearer YOUR_JWT_TOKEN_HERE\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n        \"symbol\": \"RELIANCE\",\n        \"name\": \"Reliance Industries\"\n      }'"
+			},
+			"response": []
+		},
+		{
+			"name": "get trade",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGV4YW1wbDIzZS5jb20iLCJleHAiOjE3NDUwNjQ2OTR9.78KdHcBN9sOeMiJ0GlWpTrP5o1NtsXd3G0PuKTTXrwk"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"stock_id\": 1,\n    \"trade_type\": \"SELL\",\n    \"quantity\": 10,\n    \"price\": 2950.5\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/trades",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"trades"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/trades \\\n  -H \"Authorization: Bearer <your_jwt_token>\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"stock_id\": 1,\n    \"trade_type\": \"BUY\",\n    \"quantity\": 10,\n    \"price\": 290.5\n  }'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "get trades",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <your_jwt_token>"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/trades",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"trades"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://localhost:8000/trades \\\n  -H \"Authorization: Bearer <your_jwt_token>\"\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Get portfolio",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGV4YW1wbDIzZS5jb20iLCJleHAiOjE3NDUwNjg2NTd9.kdCZT_4f5NZeoZr4T9B48FjZMB5P402GzTWqFPeu-2U"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/portfolio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"portfolio"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET \"http://localhost:8000/portfolio\" \\\n  -H \"Authorization: Bearer <your_jwt_token_here>\"\n"
+			},
+			"response": []
+		},
+		{
+			"name": "create_portfolio",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGV4YW1wbDIzZS5jb20iLCJleHAiOjE3NDUwNzQ2NzN9.38BEYg6Xl6UGpXw4YOgN5hu8z57_Fptn1IpnYBLjzB0"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"My Demo Portfolio 2\",\n    \"initial_funds\": 100000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/portfolio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"portfolio"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/portfolio \\\n  -H \"Authorization: Bearer <YOUR_JWT_TOKEN>\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"name\": \"My Demo Portfolio\",\n    \"initial_funds\": 100000\n}'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "create trade",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGV4YW1wbDIzZS5jb20iLCJleHAiOjE3NDUwNjg5NDJ9.1eG01o_8DnMO26iYIBVwt0q-OlCs3Jryk_LzSAHTLG4"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"stock_id\": 1,\n    \"portfolio_id\": \"1572fc6b-3c5a-4f81-ad2d-d639276af93e\",\n    \"quantity\": 5,\n    \"price\": 10,\n    \"trade_type\": \"BUY\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/trade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"trade"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/trade \\\n  -H \"Authorization: Bearer <YOUR_JWT_TOKEN>\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"stock_id\": 1,\n    \"portfolio_id\": \"YOUR_PORTFOLIO_UUID\",\n    \"quantity\": 10,\n    \"price\": 100,\n    \"trade_type\": \"buy\"\n}'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "get portfolio holdings",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGV4YW1wbDIzZS5jb20iLCJleHAiOjE3NDUwNjk0Njd9.pdF01-n8Zdrmy9zv2M8NvX68G2YexkN5U27V9qaPWPc"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/portfolio/dc3a537b-74bb-4784-b4ca-847c623e533c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"portfolio",
+						"dc3a537b-74bb-4784-b4ca-847c623e533c"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://localhost:8000/portfolio \\\n  -H \"Authorization: Bearer <YOUR_JWT_TOKEN>\"\n"
+			},
+			"response": []
+		},
+		{
+			"name": "get user all portfolio",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGV4YW1wbDIzZS5jb20iLCJleHAiOjE3NDUwNjg5NDJ9.1eG01o_8DnMO26iYIBVwt0q-OlCs3Jryk_LzSAHTLG4"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/portfolio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"portfolio"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://localhost:8000/portfolio \\\n  -H \"Authorization: Bearer <YOUR_JWT_TOKEN>\"\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Backtest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGV4YW1wbDIzZS5jb20iLCJleHAiOjE3NDUwNzMwNzd9.w-2yzxJ_6ypg32IFPm-2FvKBSjpYagABahNcf4_6NBg"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"strategy_id\": \"moving_average\",\n  \"portfolio_id\": \"7d1654fb-9068-4892-a350-79ac86f5cb66\",\n  \"start_date\": \"2023-08-10\",\n  \"end_date\": \"2025-12-31\",\n  \"initial_capital\": 10000\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/backtest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"backtest"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/backtest \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer <YOUR_ACCESS_TOKEN>\" \\\n  -d '{\n    \"strategy_id\": \"ma_crossover\",\n    \"portfolio_id\": \"<PORTFOLIO_ID>\",\n    \"start_date\": \"2023-01-01T00:00:00\",\n    \"end_date\": \"2023-12-31T00:00:00\",\n    \"initial_capital\": 100000\n  }'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "portfolio analasysy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGV4YW1wbDIzZS5jb20iLCJleHAiOjE3NDUwNzMwNzd9.w-2yzxJ_6ypg32IFPm-2FvKBSjpYagABahNcf4_6NBg"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/analysis/estimate_returns/portfolio?start_ts=2023-07-18T00:00:00&end_ts=2024-01-01T00:00:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"analysis",
+						"estimate_returns",
+						"portfolio"
+					],
+					"query": [
+						{
+							"key": "start_ts",
+							"value": "2023-07-18T00:00:00"
+						},
+						{
+							"key": "end_ts",
+							"value": "2024-01-01T00:00:00"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X GET \"http://localhost:8000/analysis/estimate_returns/portfolio?start_ts=2023-01-01T00:00:00&end_ts=2024-01-01T00:00:00\" \\\n  -H \"accept: application/json\" \\\n  -H \"Authorization: Bearer <ACCESS_TOKEN>\"\n"
+			},
+			"response": []
+		},
+		{
+			"name": "stock analycis",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGV4YW1wbDIzZS5jb20iLCJleHAiOjE3NDUwNzQ2NzN9.38BEYg6Xl6UGpXw4YOgN5hu8z57_Fptn1IpnYBLjzB0"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/analysis/estimate_returns/stock?stock_symbol=HDFCBANK&start_ts=2023-07-18T00:00:00&end_ts=2024-01-01T00:00:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"analysis",
+						"estimate_returns",
+						"stock"
+					],
+					"query": [
+						{
+							"key": "stock_symbol",
+							"value": "HDFCBANK"
+						},
+						{
+							"key": "start_ts",
+							"value": "2023-07-18T00:00:00"
+						},
+						{
+							"key": "end_ts",
+							"value": "2024-01-01T00:00:00"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X GET \"http://localhost:8000/analysis/estimate_returns/stock?stock_symbol=AAPL&start_ts=2023-01-01T00:00:00&end_ts=2024-01-01T00:00:00\" \\\n  -H \"accept: application/json\" \\\n  -H \"Authorization: Bearer <ACCESS_TOKEN>\""
+			},
+			"response": []
+		}
+	]
+}
